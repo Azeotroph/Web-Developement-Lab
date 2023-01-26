@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;;
+    }
+    .info{
+        width:1050px;
+        height:400px;
+        background-color: #9AD685;
+        margin-left:auto;
+        margin-right: auto;
+        margin-top:-150px;
+        border-style: ridge;
+        border-width:5px;
+        padding-top:10px;
+        padding-bottom:10px;
+        padding-left:5%;
+        padding-right:5%;
+
+
+    }
+    .b{
+        float:left;
+        margin-top: 45px;
+        margin-right: 20px;
+        margin-left:20px;
+        margin-bottom: 15px;
+    }
+    .banner{
+    width: 100%;
+    height:100%;
+    background-image:url(bg.png);
+    background-repeat: repeat;
+    } 
+
+    .logo{
+    width: 120px;
+    cursor: pointer;
+    }
+    .lgn{
+    width: 40px;
+    position:right;
+    padding-left:540px;
+    padding-bottom:10px;
+    cursor: pointer;
+    }
+    .wsl{
+    width: 40px;
+    position:relative;
+    padding-left:0px;
+    padding-bottom:10px;
+    cursor: pointer;
+    }
+    .spc{
+    width: 50px;
+    position:right;
+    padding-left:0px;
+    padding-bottom:10px;
+    cursor: pointer;
+    }
+    .navbar{
+    width: 100%;
+    font-size: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+    .navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    }
+    .navbar ul li a{
+    text-decoration: none;
+    color: white;
+    text-decoration: uppercase;
+    }
+
+    .navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #9AD685;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+    }
+
+    .navbar ul li:hover::after{
+    width: 100%;
+    }
+    .button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 3px solid #5A483A; 
+    background: #64a54c;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    }
+    .button:hover{
+    background-color: #3a871e;
+    color: white;
+    }
+
+    .banner a {
+    float: right;
+    color: black;
+    text-align: center;
+    right:400px;
+    margin-top: -5px;
+    font-size: 17px;
+    }
+    .banner:hover{
+    background-color: #3a871e;
+    color: white;
+    }
+    .banner input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    background-color: beige;
+    margin-top: -90px;
+    margin-right: 800px;
+    font-size: 17px;
+    }
+    .logo2{
+        font-size: 40px;
+        color: white;
+        margin-top: auto;
+        margin-bottom: -50px;
+        margin-left: 140px;
+    }
+    .products .heading{
+        width:200px;
+        height:80px;
+        background:linear-gradient(rgba(241,223,189,0.753),rgba(191,156,116,0.75));
+        border:2px;
+        border-radius: 25%;
+        text-align: center;
+        margin-top:20px;
+        margin-left: 600px;
+        padding-top:30px;
+    }
+
+    .products .box-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap:1.5rem;
+    }
+
+    .products .box-container .box{
+        flex:1 1 30rem;
+        box-shadow: #333;
+        border-radius: .5rem;
+        border:.1rem solid rgba(0,0,0,.1);
+        position: relative;    
+    }
+
+    .products .box-container .box .discount{
+        position: absolute;
+        top:1rem; left:1rem;
+        padding:.7rem 1rem;
+        font-size: 2rem;
+        color:var(--pink);
+        background:linear-gradient(rgba(241,223,189,0.753),rgba(191,156,116,0.75));
+        z-index: 1;
+        border-radius: .5rem;
+    }
+
+    .products .box-container .box .image{
+        position: relative;
+        text-align: center;
+        padding-top: 20px;
+        overflow:hidden;
+    }
+
+    .products .box-container .box .image img{
+        height:250px;
+        margin-right: 60px;
+    }
+
+    .products .box-container .box:hover .image img{
+        transform: scale(1.1);
+    }
+
+    .products .box-container .box .image .icons{
+        position: absolute;
+        bottom:-7rem; left:0; right:0;
+        display: flex;
+    }
+
+    .products .box-container .box:hover .image .icons{
+        bottom:0;
+    }
+
+    .products .box-container .box .image .icons a{
+        height: 70px;
+        line-height: 65px;
+        margin-left: 10px;
+        font-size: 2rem;
+        width:180px;
+        background:#333;
+        color:#fff;
+    }
+
+    .products .box-container .box .image .icons .cart-btn{
+        margin-left: 260px;
+        width: 250px;
+    }
+
+    .products .box-container .box .image .icons a:hover{
+        background:#333;
+    }
+
+    .products .box-container .box .content{
+        padding:2rem;
+        text-align: center;
+        color:#333;
+    }
+
+    .products .box-container .box .content h3{
+        font-size: 2.5rem;
+        color:rgb(174, 142, 82);
+    }
+
+    .products .box-container .box .content .price{
+        font-size: 2.5rem;
+        color:rgb(176, 157, 121);
+        font-weight: bolder;
+        padding-top: 1rem;
+    }
+
+    .products .box-container .box .content .price span{
+        font-size: 1.5rem;
+        color:#999;
+        font-weight: lighter;
+        text-decoration: line-through;
+    }
+
+</style>
+<body> 
+    <h1>
+        <div class="banner">
+            <pre class="logo2">Earth & Bloom</pre>
+            <div class="navbar">
+                <img src="logo.png" class="logo">
+                <img src="lgn1.png" class="lgn">
+                <img src="wsl.png" class="wsl">
+                <img src="spc.png" class="spc">
+                <ul>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Shop </a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <input type="text" placeholder="Search..">
+            <section class="products" id="products">
+                <div class="heading">
+                    <h1 style="color:white;font-size:40px;">Tools</h1>
+                </div>
+            
+                <div class="box-container">
+            
+                    <div class="box">
+                        <span class="discount">-30%</span>
+                        <div class="image">
+                            <img src="images/img21.jpg" alt="">
+                            <div class="icons">
+                                <a href="#" class="fas fa-heart">Wishlist</a>
+                                <a href="#" class="cart-btn">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>Spade Shovel</h3>
+                            <div class="price"> Rs 699 <span>Rs 999</span> </div>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <span class="discount">-43%</span>
+                        <div class="image">
+                            <img src="images/img22.jpg" alt="">
+                            <div class="icons">
+                                <a href="#" class="fas fa-heart">Wishlist</a>
+                                <a href="#" class="cart-btn">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>Trowel</h3>
+                            <div class="price"> Rs 169 <span>Rs 299</span> </div>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <span class="discount">-16%</span>
+                        <div class="image">
+                            <img src="images/img23.jpg" alt="">
+                            <div class="icons">
+                                <a href="#" class="fas fa-heart">Wishlist</a>
+                                <a href="#" class="cart-btn">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>Rake</h3>
+                            <div class="price"> Rs 499 <span>Rs 599</span> </div>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <span class="discount">-50%</span>
+                        <div class="image">
+                            <img src="images/img24.jpg" alt="">
+                            <div class="icons">
+                                <a href="#" class="fas fa-heart">Wishlist</a>
+                                <a href="#" class="cart-btn">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>Fork</h3>
+                            <div class="price"> Rs 99 <span> Rs 199</span> </div>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <span class="discount">-30%</span>
+                        <div class="image">
+                            <img src="images/img25.jpg" alt="">
+                            <div class="icons">
+                                <a href="#" class="fas fa-heart">Wishlist</a>
+                                <a href="#" class="cart-btn">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>Watering Can</h3>
+                            <div class="price"> Rs 349 <span>Rs 499</span> </div>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <span class="discount">-60%</span>
+                        <div class="image">
+                            <img src="images/img26.jpg" alt="">
+                            <div class="icons">
+                                <a href="#" class="fas fa-heart">Wishlist</a>
+                                <a href="#" class="cart-btn">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>Garden Gloves</h3>
+                            <div class="price"> Rs 119 <span>Rs 299</span> </div>
+                        </div>
+                    </div>
+            
+                    <div class="box">
+                        <span class="discount">-26%</span>
+                        <div class="image">
+                            <img src="images/img27.jpg" alt="">
+                            <div class="icons">
+                                <a href="#" class="fas fa-heart">Wishlist</a>
+                                <a href="#" class="cart-btn">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>Gardening Tools Set of 3</h3>
+                            <div class="price"> Rs 999 <span>Rs 1349 </span> </div>
+                        </div>
+                    </div>
+            
+            
+                    <div class="box">
+                        <span class="discount">-42%</span>
+                        <div class="image">
+                            <img src="images/img28.jpg" alt="">
+                            <div class="icons">
+                                <a href="#" class="fas fa-heart">Wishlist</a>
+                                <a href="#" class="cart-btn">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3>Gardening Tools Set of 4</h3>
+                            <div class="price"> Rs 1099 <span>Rs 1499</span> </div>
+                        </div>
+                    </div>
+            
+                </div>
+            
+            </section>
+        </div>
+    </h1>
+
+
+</body>
+</html>
